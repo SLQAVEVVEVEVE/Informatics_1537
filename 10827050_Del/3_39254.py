@@ -1,10 +1,16 @@
 count = 0
-n = 10000001
+i = 500000001
 while count < 5:
-    i = 2
-    while n % i and i < 10000:
-        i += 1
-    if i + n//i < 10000:
-        print(n, (i+n//i))
-        count += 1
-    n += 1
+    dell = 1
+    countDel = 0
+    for j in range(2, (i//2) + 1):
+        if i % j == 0:
+            countDel += 1
+            dell *= j
+            if dell > i:
+                break
+            elif countDel == 5:
+                print(dell, i)
+                count += 1
+                break
+    i += 1
